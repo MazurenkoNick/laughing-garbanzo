@@ -1,4 +1,4 @@
-package com.example.departmentservice.exception;
+package com.example.employeeservice.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.log4j.Log4j2;
@@ -27,10 +27,10 @@ public class GlobalExceptionHandler {
         Map<String, String> fieldErrors = new HashMap<>();
 
         errors.forEach(
-            error -> fieldErrors.put(
-                    ((FieldError) error).getField(),
-                    error.getDefaultMessage()
-            )
+                error -> fieldErrors.put(
+                        ((FieldError) error).getField(),
+                        error.getDefaultMessage()
+                )
         );
 
         return new ResponseEntity<>(fieldErrors, HttpStatus.BAD_REQUEST);
