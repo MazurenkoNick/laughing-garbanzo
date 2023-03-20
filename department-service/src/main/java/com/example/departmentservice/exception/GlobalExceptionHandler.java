@@ -1,5 +1,6 @@
 package com.example.departmentservice.exception;
 
+import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,23 @@ public class GlobalExceptionHandler {
         );
 
         return new ResponseEntity<>(fieldErrors, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    @ExceptionHandler(EntityNotFoundException.class)
+    public ResponseEntity<ErrorDetails> handleEntityNotFoundException(EntityNotFoundException exception) {
+
+        log.error(exception);
+
+        var errorDetails = ErrorDetails.builder()
+                .dateTime(LocalDateTime.now())
+                .message(exception.getMessage())
+                .errorCode("ENTITY_NOT_FOUND_ERROR")
+                .build();
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(errorDetails);
+
     }
 
     @ExceptionHandler(Exception.class)
