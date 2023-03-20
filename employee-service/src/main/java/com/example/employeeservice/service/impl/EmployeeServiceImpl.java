@@ -4,8 +4,11 @@ import com.example.employeeservice.dto.EmployeeDto;
 import com.example.employeeservice.entity.Employee;
 import com.example.employeeservice.repository.EmployeeRepository;
 import com.example.employeeservice.service.EmployeeService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -30,6 +33,22 @@ public class EmployeeServiceImpl implements EmployeeService {
                 employee.getLastName(),
                 employee.getEmail()
         );
+    }
 
+    @Override
+    public EmployeeDto getEmployee(Long id) {
+        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
+
+        Employee employee = optionalEmployee.orElseThrow(
+                () -> new EntityNotFoundException(String.format("Employee with id %s was not found", id))
+        );
+
+        //TODO implement mapper for Employee entity and EmployeeDto
+        return new EmployeeDto(
+                employee.getId(),
+                employee.getFirstName(),
+                employee.getLastName(),
+                employee.getEmail()
+        );
     }
 }
