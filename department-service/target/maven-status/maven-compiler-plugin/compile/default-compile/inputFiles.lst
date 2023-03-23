@@ -1,0 +1,12 @@
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\validation\UniqueDepartment.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\exception\GlobalExceptionHandler.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\exception\ErrorDetails.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\entity\Department.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\validation\UniqueDepartmentValidator.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\service\DepartmentService.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\service\impl\DepartmentServiceImpl.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\dto\DepartmentDto.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\controller\DepartmentController.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\repository\DepartmentRepository.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\DepartmentServiceApplication.java
+C:\Users\Xiaomi\IdeaProjects\SPRING_PR\spring-microservices\department-service\src\main\java\com\example\departmentservice\mapper\DepartmentMapper.java
