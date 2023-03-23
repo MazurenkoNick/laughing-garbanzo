@@ -13,8 +13,6 @@ import lombok.Setter;
 @Setter
 public class EmployeeDto {
 
-    private Long id;
-
     @NotBlank
     private String firstName;
 
@@ -23,4 +21,6 @@ public class EmployeeDto {
 
     @UniqueEmail
     private String email;
+
+    private String departmentCode;
 }

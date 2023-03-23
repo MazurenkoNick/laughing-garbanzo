@@ -6,7 +6,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-03-21T15:26:29+0200",
+    date = "2023-03-23T14:11:19+0200",
     comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.4.1 (Amazon.com Inc.)"
 )
 public class EmployeeMapperImpl implements EmployeeMapper {
@@ -19,10 +19,10 @@ public class EmployeeMapperImpl implements EmployeeMapper {
 
         EmployeeDto employeeDto = new EmployeeDto();
 
-        employeeDto.setId( employee.getId() );
         employeeDto.setFirstName( employee.getFirstName() );
         employeeDto.setLastName( employee.getLastName() );
         employeeDto.setEmail( employee.getEmail() );
+        employeeDto.setDepartmentCode( employee.getDepartmentCode() );
 
         return employeeDto;
     }
@@ -35,10 +35,10 @@ public class EmployeeMapperImpl implements EmployeeMapper {
 
         Employee employee = new Employee();
 
-        employee.setId( employeeDto.getId() );
         employee.setFirstName( employeeDto.getFirstName() );
         employee.setLastName( employeeDto.getLastName() );
         employee.setEmail( employeeDto.getEmail() );
+        employee.setDepartmentCode( employeeDto.getDepartmentCode() );
 
         return employee;
     }
