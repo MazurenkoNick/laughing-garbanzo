@@ -6,7 +6,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-03-23T22:37:07+0200",
+    date = "2023-03-30T15:20:48+0300",
     comments = "version: 1.5.3.Final, compiler: javac, environment: Java 17.0.4.1 (Amazon.com Inc.)"
 )
 public class EmployeeMapperImpl implements EmployeeMapper {
