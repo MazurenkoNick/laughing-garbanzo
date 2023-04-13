@@ -9,7 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/department")
+@RequestMapping("api/departments")
 @AllArgsConstructor
 public class DepartmentController {
 
@@ -24,11 +24,10 @@ public class DepartmentController {
                 .body(department);
     }
 
-    @GetMapping("/{departmentCode}")
-    public ResponseEntity<DepartmentDto> getDepartment(@PathVariable String departmentCode) {
-
-        DepartmentDto department = departmentService.getDepartmentByCode(departmentCode);
-
-        return ResponseEntity.ok(department);
+    @GetMapping("/{department-code}")
+    public ResponseEntity<DepartmentDto> getDepartment(
+            @PathVariable(value = "department-code", required = false) String departmentCode){
+        DepartmentDto departmentDto = departmentService.getDepartmentByCode(departmentCode);
+        return new ResponseEntity<>(departmentDto, HttpStatus.OK);
     }
 }
