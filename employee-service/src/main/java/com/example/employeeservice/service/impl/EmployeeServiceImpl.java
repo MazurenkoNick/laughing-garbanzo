@@ -10,6 +10,7 @@ import com.example.employeeservice.service.APIClient;
 import com.example.employeeservice.service.EmployeeService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -29,7 +30,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final WebClient webClient;
     private final APIClient departmentServiceClient;
 
-    public EmployeeServiceImpl(EmployeeRepository employeeRepository, RestTemplate restTemplate, WebClient webClient, APIClient departmentServiceClient) {
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository,
+                               RestTemplate restTemplate,
+                               WebClient webClient,
+                               @Qualifier("department-client") APIClient departmentServiceClient) {
         this.employeeRepository = employeeRepository;
         this.restTemplate = restTemplate;
         this.webClient = webClient;

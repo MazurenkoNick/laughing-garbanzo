@@ -6,11 +6,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "DEPARTMENT-SERVICE", fallback = APIClientFallback.class)
+@FeignClient(
+        name = "DEPARTMENT-SERVICE",
+        fallback = APIClientFallback.class,
+        qualifiers = {"department-client"})
 public interface APIClient {
 
     @GetMapping("api/departments/{department-code}")
     ResponseEntity<DepartmentDto> getDepartment(
             @PathVariable(value = "department-code", required = false) String departmentCode);
-
 }
